@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Services";
+}
+<h1>@ViewData["Title"] - Tank Setup</h1>
+
+<p>Here are a few items to consider when setting up your tank</p>
+<br />
+<h2>Fish</h2>
+<img src="~/img/pearlgourami.jpg" width="50%" />
+<p>Managing a successful fish tank involves a nuanced understanding of each fish species' unique requirements. Beyond the aesthetic appeal of diverse fish varieties, caretakers must meticulously monitor and adjust factors such as water chemistry, temperature, and temperament to ensure the well-being of their aquatic residents. Different species have distinct preferences and tolerances, necessitating careful consideration of pH levels, ammonia and nitrate concentrations, and water hardness. Moreover, maintaining an optimal temperature range is crucial for various fish types. Beyond these environmental factors, recognizing the social behaviors and temperaments of each species is vital to foster a harmonious community within the tank. This intricate balancing act adds depth to the art and science of fish keeping, making it a fulfilling and educational endeavor for enthusiasts.</p>
+<br />
+<br />
+<br />
+<h2>Plants</h2>
+<img src="~/img/plants.jpg" width="50%" />
+<p>Plants play a crucial role in aquariums by contributing to the overall health of the aquatic environment, primarily through water purification. The process of photosynthesis, where plants absorb carbon dioxide and release oxygen, helps maintain a balance in the aquarium ecosystem. Additionally, plants act as natural filters, absorbing nitrates and other waste products produced by fish, thereby contributing to water quality. However, it's essential to recognize that not all aquatic plants thrive in the same water parameters. Some plants are more adaptable and can tolerate a range of conditions, while others may have specific requirements concerning pH levels, water hardness, and lighting intensity. Therefore, choosing the right plants that align with the targeted water parameters is crucial for their successful growth and contribution to a healthy, thriving aquarium environment. This aspect of plant selection adds another layer of consideration for aquarium enthusiasts seeking to create a balanced and sustainable ecosystem.</p>
+<br />
+<br />
+<br />
+<h2>Cleaners</h2>
+<img src="~/img/pygmycorycatfish.jpg" width="50%" />
+<p>Cleaners play a vital role in maintaining the cleanliness and overall well-being of an aquarium. These help control and remove unwanted substances from the aquarium environment. Algae, for instance, can accumulate on surfaces, affecting water quality and aesthetics. Algae-eating fish, like certain species of catfish or plecos, actively consume and control algae growth, preventing it from overtaking the tank. They can also consuming leftover food and decaying plant matter, which helps prevent the buildup of debris. By incorporating these cleaner organisms into the aquarium ecosystem, hobbyists can create a more balanced and visually appealing environment, reducing the need for excessive manual cleaning and contributing to the overall health of the aquatic community. Regular maintenance, including water changes and proper feeding practices, combined with the presence of effective cleaners, ensures a cleaner, healthier, and more sustainable aquarium habitat.</p>
+<br />
+<br />
+<br />
+<h2>Invertibrates</h2>
+<img src="~/img/shrimps.jpg" width="50%" />
+<p>Invertebrates play a crucial and nuanced role in aquarium ecosystems, akin to cleaners, but with a focus on a finer level of maintenance. These tiny organisms, including various species of shrimp, snails, and small crustaceans, contribute to the ecological balance by addressing minute particles and substrates within the tank. In contrast to larger cleaners that primarily target visible debris and algae, invertebrates excel at cleaning on a micro scale. For example, detritus-eating shrimp diligently scour the aquarium substrate, consuming organic matter and small food particles that settle on the bottom. Snails with their rasping tongues help graze on algae and microorganisms on various surfaces. Their activities not only enhance water quality by reducing the accumulation of microscopic waste but also contribute to the breakdown of organic matter, preventing the release of harmful compounds. Integrating a variety of invertebrates into the aquarium not only adds diversity but also promotes a more thorough and comprehensive approach to maintaining a clean and balanced aquatic environment. The combined efforts of both cleaners and invertebrates create a dynamic and self-sustaining system that benefits the overall health of the aquarium and its inhabitants.</p>
+<br />
+<br />
+<br />
+<p>
+    I am happy to help you set up your tank! I have a fee to help me get through school, feel free to use the calculator below!
+</p>
+<form method="post">
+    <div class="form-group">
+        <label for="hours">Enter Number of Hours:</label>
+        <input type="number" class="form-control" id="hours" name="hours" required min="0">
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="chargePerHour">Charge Per Hour:</label>
+        <input type="text" class="form-control" id="chargePerHour" name="chargePerHour" value=20 readonly>
+    </div>
+    <br />
+    <button type="button" class="btn btn-primary" onclick="calculateTotal()">Calculate Total</button>
+    <br />
+    <div class="form-group">
+        <br />
+        <label for="total">Total Cost:</label>
+        <input type="text" class="form-control" id="total" name="total" readonly>
+    </div>
+</form>
+<br />
+
+<script>
+    function calculateTotal() {
+        var hours = parseFloat(document.getElementById('hours').value);
+        var chargePerHour = parseFloat(document.getElementById('chargePerHour').value);
+
+        if (!isNaN(hours) && hours >= 0) {
+            var total = hours * chargePerHour;
+            document.getElementById('total').value = total.toFixed(2);
+        } else {
+            alert('Please enter a valid positive number for hours.');
+        }
+    }
+</script>
